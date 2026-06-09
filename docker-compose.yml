@@ -1,0 +1,13 @@
+services:
+  mrklk-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mrklk-system-web
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      HOSTNAME: 0.0.0.0
+      PORT: 3000
+    ports:
+      - "30050:3000"
